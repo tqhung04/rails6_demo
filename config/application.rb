@@ -18,5 +18,8 @@ module Rails6Demo
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.cache_store = :redis_store, YAML.load(
+      ERB.new(File.read("config/redis.yml")).result
+    )[Rails.env]["redis"].symbolize_keys
   end
 end
