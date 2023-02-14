@@ -15,4 +15,4 @@ production:
     host: <%= ENV["REDIS_HOST"] %>
     port: <%= ENV["REDIS_PORT"] %>
     db: <%= ENV["REDIS_DB"] %>
-    expires_in: <%= ENV["REDIS_EXPIRES_IN"] %>
+    expires_in: <%= 1.hour %>

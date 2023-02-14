@@ -1,6 +1,6 @@
 require "sidekiq"
 
-Sidekiq.default_worker_options["retry"] = 3
+# Sidekiq.default_worker_options["retry"] = 3
 
 url = case Rails.env
   when "production", "staging"
