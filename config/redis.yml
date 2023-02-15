@@ -1,18 +1,20 @@
 development:
   redis:
-    host: localhost
+    host: <%= ENV['REDIS_HOST'] || "localhost" %>
     port: 6379
+    db: demoredis-001
     expires_in: <%= 1.hour %>
 
 test:
   redis:
-    host: localhost
+    host: <%= ENV['REDIS_HOST'] || "localhost" %>
     port: 6379
+    db: demoredis-001
     expires_in: <%= 1.hour %>
 
 production:
   redis:
-    host: <%= ENV["REDIS_HOST"] %>
-    port: <%= ENV["REDIS_PORT"] %>
-    db: <%= ENV["REDIS_DB"] %>
+    host: <%= ENV['REDIS_HOST'] || "localhost" %>
+    port: 6379
+    db: demoredis-001
     expires_in: <%= 1.hour %>
